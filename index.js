@@ -8,10 +8,10 @@ const app = express();
 
 const port = process.env.PORT || 5000;
 
-//Static file declaration
+// Static file declaration
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-//production mode
+// Production mode
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.join(__dirname, 'client/build')));
 	//
@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-//build mode
+// Build mode
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname + '/client/public/index.html'));
 });
@@ -33,10 +33,6 @@ app.use(cors());
 app.listen(port, () => {
 	console.log('We are live on port 5000');
 });
-
-/* app.get('/', (req, res) => {
-	res.send('Welcome to my api');
-}); */
 
 app.post('/api/v1', async (req, res) => {
 	console.log('Request started', req.body);
@@ -52,7 +48,7 @@ app.post('/api/v1', async (req, res) => {
 		<p>${req.body.message}</p>
 	`;
 
-	// create reusable transporter object using the default SMTP transport
+	// Create reusable transporter object using the default SMTP transport
 	let transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
@@ -61,24 +57,19 @@ app.post('/api/v1', async (req, res) => {
 		}
 	});
 
-	// setup email data with unicode symbols
+	// Setup email data with unicode symbols
 	let mailOptions = {
-		from: `"${req.body.name}" <seun.message.handler@gmail.com>`, // sender address
-		to: 'oluwaseunus@gmail.com', // list of receivers
+		from: `"Nodemailer Contact" <seun.message.handler@gmail.com>`, // Sender address
+		to: 'oluwaseunus@gmail.com', // List of receivers
 		subject: 'Portfolio Contact Form', // Subject line
-		text: 'Hello world?', // plain text body
-		html: output // html body
+		text: 'Hello world?', // Plain text body
+		html: output // Html body
 	};
 
-	// send mail with defined transport object
-	let info = await transporter.sendMail(mailOptions);
-
-	console.log('Message sent: %s', info.messageId);
-	// Preview only available when sending through an Ethereal account
-	console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-	// Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-	// Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+	// Send mail with defined transport object
+	let info = await transporter.sendMail(mailOptions, err => {
+		if (err) throw err;
+	});
 
 	res.send('Done');
 });

@@ -140,12 +140,16 @@ body {
       height: 45rem;
       border-radius: 50%;
       background-color: #eee;
-      margin: 0 auto; }
+      margin: 0 auto;
+      opacity: 0; }
     .header__main-line {
       width: 80%;
       height: 0.1em;
       background-color: #5863f8;
-      margin: auto; }
+      margin: auto;
+      opacity: 0; }
+    .header__main-name, .header__main-occupation {
+      opacity: 0; }
     .header__main-details {
       margin: auto;
       float: right;
@@ -175,6 +179,26 @@ body {
       margin: 3.5rem auto; }
     .section__about-major p {
       color: #2f4f4f; }
+
+.section__ddm {
+  height: 100vh;
+  background-color: #eee;
+  text-align: center;
+  font-size: 2.6rem;
+  padding: 7.5rem 25rem; }
+  .section__ddm * {
+    margin-bottom: 2.5rem; }
+  .section__ddm p {
+    color: #2f4f4f; }
+  .section__ddm-image {
+    width: 35rem;
+    height: 35rem;
+    background-position: left;
+    background-size: cover; }
+    .section__ddm-image-design {
+      background-image: url("./images/harpal-singh-396280-unsplash.png"); }
+    .section__ddm-image-develop {
+      background-image: url("./images/Webp.net-resizeimage.jpg"); }
 
 .section__tech {
   height: 85vh;

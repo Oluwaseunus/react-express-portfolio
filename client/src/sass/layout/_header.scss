@@ -13,6 +13,7 @@
 			border-radius: 50%;
 			background-color: $color-grey;
 			margin: 0 auto;
+			opacity: 0;
 		}
 
 		&-line {
@@ -20,6 +21,12 @@
 			height: 0.1em;
 			background-color: $color-primary-main;
 			margin: auto;
+			opacity: 0;
+		}
+
+		&-name,
+		&-occupation {
+			opacity: 0;
 		}
 
 		&-details {

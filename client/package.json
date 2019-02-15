@@ -15,6 +15,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"compile:sass": "node-sass src/App.scss public/styles.css -w",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
