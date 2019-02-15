@@ -1,0 +1,29 @@
+@mixin clearfix {
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin absCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin fade($direction) {
+	@if $direction == goUp {
+		transform: translateY(1.5em);
+	}
+	@if $direction == goDown {
+		transform: translateY(-1.5em);
+	}
+	@if $direction == goLeft {
+		transform: translateX(-1.5em);
+	}
+	@if $direction == goRight {
+		transform: translateX(1.5em);
+	}
+}
