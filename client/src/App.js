@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AOS from 'aos';
 import axios from 'axios';
 import 'aos/dist/aos.css';
-import './App.scss';
+import './styles.css';
 import './helpers.js';
 
 class App extends Component {
