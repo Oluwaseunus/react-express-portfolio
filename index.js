@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 // Static file declaration
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.listen(port, () => {
-	console.log('We are live on port 5000');
+	console.log(`We are live on port ${port}`);
 });
 
 app.post('/api/v1', async (req, res) => {
