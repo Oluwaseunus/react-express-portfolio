@@ -92,5 +92,3 @@ class App extends Component {
 }
 
 export default App;
-
-// "start": "react-scripts start",
