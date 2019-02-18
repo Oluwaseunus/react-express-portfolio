@@ -10,6 +10,7 @@ class App extends Component {
 		email: '',
 		message: '',
 		sent: false,
+		formError: false,
 		buttonText: 'Send Message'
 	};
 
@@ -29,20 +30,26 @@ class App extends Component {
 	handleSubmit = e => {
 		e.preventDefault();
 
-		this.setState({ buttonText: '...sending' });
+		const { name, email, message } = this.state;
 
-		let data = {
-			name: this.state.name,
-			email: this.state.email,
-			message: this.state.message
-		};
+		if (!(name && email && message)) {
+			this.setState({ formError: true });
+		} else {
+			this.setState({ buttonText: '...sending', formError: false });
 
-		axios
-			.post('/api/v1', data)
-			.then(res => {
-				this.setState({ sent: true }, this.resetForm());
-			})
-			.catch(() => this.setState({ buttonText: 'Message not sent' }));
+			let data = {
+				name: this.state.name,
+				email: this.state.email,
+				message: this.state.message
+			};
+
+			axios
+				.post('/api/v1', data)
+				.then(res => {
+					this.setState({ sent: true }, this.resetForm());
+				})
+				.catch(() => this.setState({ buttonText: 'Message not sent' }));
+		}
 	};
 
 	resetForm = () => {
@@ -91,6 +98,11 @@ class App extends Component {
 								value={this.state.buttonText}
 								data-aos='flip-right'
 							/>
+							{this.state.formError && (
+								<p style={{ color: 'red', marginTop: '10px' }}>
+									Please properly fill the form.
+								</p>
+							)}
 						</form>
 					</div>
 				</div>
