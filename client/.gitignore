@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 /.pnp
+/src/sass
+/src/App.scss
 .pnp.js
 
 # testing
