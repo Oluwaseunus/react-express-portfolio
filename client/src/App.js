@@ -60,12 +60,13 @@ class App extends Component {
 				<h2 className='u-margin-bottom-big'>Contact Me</h2>
 				<div className='row'>
 					<div className='col-1-of-2'>
-						<form onSubmit={this.handleSubmit} data-aos='flip-right'>
+						<form onSubmit={this.handleSubmit}>
 							<input
 								type='text'
 								name='name'
 								placeholder='First name'
 								value={this.state.name}
+								data-aos='flip-right'
 								onChange={this.handleChange}
 							/>
 							<input
@@ -73,16 +74,23 @@ class App extends Component {
 								name='email'
 								placeholder='Email address'
 								value={this.state.email}
+								data-aos='flip-right'
 								onChange={this.handleChange}
 							/>
 							<textarea
 								name='message'
+								placeholder='Write your message here. 🙂'
 								cols='30'
 								rows='5'
 								value={this.state.message}
+								data-aos='flip-right'
 								onChange={this.handleChange}
 							/>
-							<input type='submit' value={this.state.buttonText} />
+							<input
+								type='submit'
+								value={this.state.buttonText}
+								data-aos='flip-right'
+							/>
 						</form>
 					</div>
 				</div>
