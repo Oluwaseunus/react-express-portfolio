@@ -37,11 +37,7 @@ class App extends Component {
 		} else {
 			this.setState({ buttonText: '...sending', formError: false });
 
-			let data = {
-				name: this.state.name,
-				email: this.state.email,
-				message: this.state.message
-			};
+			let data = { name, email, message };
 
 			axios
 				.post('/api/v1', data)
