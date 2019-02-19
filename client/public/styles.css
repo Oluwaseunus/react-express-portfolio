@@ -160,7 +160,7 @@ body {
 .section__about {
   background-color: #eee;
   font-size: 2.6rem;
-  padding: 15rem 25rem; }
+  padding: 10rem 25rem; }
   .section__about-image {
     width: 100%;
     height: 40rem;
@@ -168,9 +168,9 @@ body {
     background-size: cover;
     background-position: left; }
     .section__about-image-1 {
-      background-image: url("./images/11022019.png"); }
+      background-image: url("./images/about-1.jpeg"); }
     .section__about-image-2 {
-      background-image: url("./images/fabian-grohs-437907-unsplash.jpg"); }
+      background-image: url("./images/about-2.jpg"); }
   .section__about-major {
     margin: auto;
     text-align: center;
@@ -181,7 +181,6 @@ body {
       color: #2f4f4f; }
 
 .section__ddm {
-  height: 100vh;
   background-color: #eee;
   text-align: center;
   font-size: 2.6rem;
@@ -203,7 +202,8 @@ body {
       background-image: url("./images/maintain.jpg"); }
 
 .section__tech {
-  height: 75vh;
+  padding: 5rem;
+  padding-bottom: 15rem;
   margin: auto;
   font-size: 2.6rem;
   text-align: center;
