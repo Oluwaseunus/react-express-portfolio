@@ -235,12 +235,21 @@ body {
       background-image: url("./images/logo-sass.svg"); }
     .section__tech-image-8 {
       background-image: url("./images/redux.svg"); }
+    .section__tech-image-9 {
+      background-image: url("./images/node.png");
+      background-position: center;
+      background-repeat: no-repeat; }
+    .section__tech-image-10 {
+      background-image: url("./images/express-logo.png");
+      background-size: cover;
+      background-position: top; }
 
 .section__form {
-  height: 90vh;
+  height: 70vh;
   font-size: 2.6rem;
   text-align: center;
-  background-color: #eee; }
+  background-color: #eee;
+  position: relative; }
   .section__form input[type='text'],
   .section__form input[type='email'],
   .section__form select,
@@ -266,3 +275,13 @@ body {
     cursor: pointer; }
   .section__form input[type='submit']:hover {
     background-color: #45a049; }
+  .section__form-box {
+    position: relative; }
+  .section__form-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 15rem;
+    color: #2f4f4f;
+    width: 40rem; }

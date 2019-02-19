@@ -119,14 +119,27 @@
 		&-8 {
 			background-image: url('./images/redux.svg');
 		}
+
+		&-9 {
+			background-image: url('./images/node.png');
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		&-10 {
+			background-image: url('./images/express-logo.png');
+			background-size: cover;
+			background-position: top;
+		}
 	}
 }
 
 .section__form {
-	height: 90vh;
+	height: 70vh;
 	font-size: 2.6rem;
 	text-align: center;
 	background-color: $color-grey;
+	position: relative;
 
 	input[type='text'],
 	input[type='email'],
@@ -159,5 +172,15 @@
 
 	input[type='submit']:hover {
 		background-color: #45a049;
+	}
+
+	&-box {
+		position: relative;
+	}
+	&-message {
+		@include absCenter;
+		top: 15rem;
+		color: $color-grey-dark;
+		width: 40rem;
 	}
 }
